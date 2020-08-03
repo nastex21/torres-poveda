@@ -1,38 +1,372 @@
+:root {
+  --main-white: white;
+  --main-black: black;
+  --main-grey: rgba(217, 217, 217, 1);
+  --main-green: rgba(144, 225, 147, 1);
+  --nunito-font-big: "Nunito 50px", sans-serif;
+}
+
+/* font-family: "Montserrat, ", sans-serif !important;
+font-family: "Nunito", sans-serif !important;  */
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+.root {
+  height: 100vh;
+}
+
 .App {
+  height: 100vh;
+}
+
+h1 {
+  font-family: var(--nunito-font-big);
+}
+
+p {
+  font-family: "Nunito", sans-serif !important;
+}
+
+/* Global nav css */
+
+.nav-link,
+.inactiveLang {
+  color: white !important;
+}
+
+.active {
+  color: var(--main-green) !important;
+}
+
+/*Splash Page */
+.splashPage {
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when 
+        the content's height is greater than the image's height */
+  /* background-attachment: fixed;
+ */
+  /* This is what makes the background image rescale based
+        on the container's size */
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.hamburgerIcon {
+  color: var(--main-grey);
+}
+
+.brandImage {
+  height: 75px !important;
+}
+
+/* Splash Page > Welcome Box */
+.welcomeMsg {
+  color: var(--main-white);
+  background: rgba(0, 0, 0, 0.45);
   text-align: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "contact"
+    "direction"
+    "button";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.welcomeHeader {
+  grid-area: header;
+  margin-top: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.welcomeContact {
+  grid-area: contact;
+  margin-top: 2em;
+}
+
+.welcomeDirection {
+  grid-area: direction;
+  margin-top: 2em;
+}
+
+/*------ Button div start ----*/
+
+.welcomeBtn {
+  grid-area: button;
+  margin-top: 2em;
+}
+
+.button {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0px 1px #000;
+  font-size: 16px;
+  text-decoration: none;
+
+  padding: 0.5em 1.5em;
+
+  cursor: pointer;
+  width: 200px;
+  overflow: visible;
+
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+
+  outline: 0;
+}
+
+.glass {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYwNjc2OCIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iMyUiIHN0b3AtY29sb3I9IiNiYmJiYmIiIHN0b3Atb3BhY2l0eT0iMC4zIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI3JSIgc3RvcC1jb2xvcj0iI2JiYmJiYiIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iMjglIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogICAgPHN0b3Agb2Zmc2V0PSI3MyUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4zIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg4JSIgc3RvcC1jb2xvcj0iIzRiNTA1MSIgc3RvcC1vcGFjaXR5PSIwLjMiLz4KICAgIDxzdG9wIG9mZnNldD0iOTclIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMyIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(
+    top,
+    rgba(96, 103, 104, 0.3) 0%,
+    rgba(187, 187, 187, 0.3) 3%,
+    rgba(187, 187, 187, 0.3) 27%,
+    rgba(0, 0, 0, 0.3) 28%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.3) 73%,
+    rgba(75, 80, 81, 0.3) 88%,
+    rgba(0, 0, 0, 0.3) 97%,
+    rgba(0, 0, 0, 0.3) 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(96, 103, 104, 0.3)),
+    color-stop(3%, rgba(187, 187, 187, 0.3)),
+    color-stop(27%, rgba(187, 187, 187, 0.3)),
+    color-stop(28%, rgba(0, 0, 0, 0.3)),
+    color-stop(60%, rgba(0, 0, 0, 0.3)),
+    color-stop(73%, rgba(0, 0, 0, 0.3)),
+    color-stop(88%, rgba(75, 80, 81, 0.3)),
+    color-stop(97%, rgba(0, 0, 0, 0.3)),
+    color-stop(100%, rgba(0, 0, 0, 0.3))
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(96, 103, 104, 0.3) 0%,
+    rgba(187, 187, 187, 0.3) 3%,
+    rgba(187, 187, 187, 0.3) 27%,
+    rgba(0, 0, 0, 0.3) 28%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.3) 73%,
+    rgba(75, 80, 81, 0.3) 88%,
+    rgba(0, 0, 0, 0.3) 97%,
+    rgba(0, 0, 0, 0.3) 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(
+    top,
+    rgba(96, 103, 104, 0.3) 0%,
+    rgba(187, 187, 187, 0.3) 3%,
+    rgba(187, 187, 187, 0.3) 27%,
+    rgba(0, 0, 0, 0.3) 28%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.3) 73%,
+    rgba(75, 80, 81, 0.3) 88%,
+    rgba(0, 0, 0, 0.3) 97%,
+    rgba(0, 0, 0, 0.3) 100%
+  ); /* Opera 11.10+ */
+  background: -ms-linear-gradient(
+    top,
+    rgba(96, 103, 104, 0.3) 0%,
+    rgba(187, 187, 187, 0.3) 3%,
+    rgba(187, 187, 187, 0.3) 27%,
+    rgba(0, 0, 0, 0.3) 28%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.3) 73%,
+    rgba(75, 80, 81, 0.3) 88%,
+    rgba(0, 0, 0, 0.3) 97%,
+    rgba(0, 0, 0, 0.3) 100%
+  ); /* IE10+ */
+  background: linear-gradient(
+    to bottom,
+    rgba(96, 103, 104, 0.3) 0%,
+    rgba(187, 187, 187, 0.3) 3%,
+    rgba(187, 187, 187, 0.3) 27%,
+    rgba(0, 0, 0, 0.3) 28%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.3) 73%,
+    rgba(75, 80, 81, 0.3) 88%,
+    rgba(0, 0, 0, 0.3) 97%,
+    rgba(0, 0, 0, 0.3) 100%
+  ); /* W3C */
+
+  border-color: rgba(0, 0, 0, 0.6);
+  border-image: none;
+  border-style: solid;
+  border-width: 1px;
+
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+    0 2px 6px rgba(0, 0, 0, 0.5), 0 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+button:active {
+  margin-left: 2px;
+  margin-right: -2px;
+}
+
+button:active.green-a {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.green-a {
+  color: var(--main-white);
+  background-color: rgba(98, 206, 102, 0.25);
+}
+
+button:hover.green-a {
+  color: rgba(220, 255, 240, 0.99);
+  text-shadow: 0px 0px 2px rgba(220, 255, 240, 0.99),
+    0px 0px 4px rgba(180, 255, 220, 0.99);
+  border-color: rgba(110, 255, 185, 0.4);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+    0 2px 6px rgba(0, 0, 0, 0.5), 0 10px rgba(0, 0, 0, 0.05) inset,
+    0 0px 5px 2px rgba(110, 255, 185, 0.75),
+    0 0px 10px 2px rgba(110, 255, 185, 0.75) inset;
+}
+
+button:active.green-a {
+  color: rgba(220, 255, 240, 0.99);
+  text-shadow: 0px 0px 2px rgba(220, 255, 240, 0.99),
+    0px 0px 4px rgba(180, 255, 220, 0.99);
+
+  border-color: rgba(110, 255, 185, 0.6) !important;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px;
+
+  box-shadow: 0 1px 0 0 rgba(110, 255, 185, 0.4) inset,
+    0 10px 0 0 rgba(110, 255, 185, 0.5) inset,
+    0 0 5px 2px rgba(110, 255, 185, 0.75),
+    0 0 10px 2px rgba(110, 255, 185, 0.75) inset !important;
+
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2ZWZmYjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmVmZmI5IiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(110, 255, 185, 1) 0%,
+    rgba(110, 255, 185, 0) 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(110, 255, 185, 1)),
+    color-stop(100%, rgba(110, 255, 185, 0))
+  ); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(110, 255, 185, 1) 0%,
+    rgba(110, 255, 185, 0) 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(110, 255, 185, 1) 0%,
+    rgba(110, 255, 185, 0) 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(110, 255, 185, 1) 0%,
+    rgba(110, 255, 185, 0) 100%
+  ); /* IE10+ */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(110, 255, 185, 1) 0%,
+    rgba(110, 255, 185, 0) 100%
+  ); /* W3C */
+}
+/* *** button div END *** */
+
+/* Desktop */
+@media screen and (min-width: 767.88888px) {
+  h1 {
+    font-size: 2.5em !important;
+    letter-spacing: 0.023em;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .welcomeContact > p,
+  .welcomeDirection > p,
+  .welcomeBtn > p,
+  .btn-estimate-text {
+    font-size: 2em !important;
+    font-weight: 500;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    height: 109px;
+    padding: 0 !important;
+  }
+
+  .navbar-text {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .brandImage {
+    height: 6.5rem !important;
+  }
+
+  /*Splash Page */
+  .splashPage {
+    height: calc(100vh - 109px);
+  }
+
+  .welcomeMsg {
+    position: absolute;
+    top: 20vh;
+    width: 42vw;
+    height: 50vh;
+  }
+
+  .welcomeBtn {
+    width: 295px;
+    height: 87px;
+  }
+
+  .btn-estimate {
+    background-color: white;
+    color: red;
+    width: 295px;
+    height: 87px;
+    border: 3px solid grey;
+  }
+
+  .btn-estimate-text {
+  }
+
+  .welcomeHeader > h1 {
+    font-weight: 900;
+  }
+
+  /*Nav bar */
+  .navbar-nav > .nav-link {
+    padding: 4em !important;
   }
 }

@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { withRouter, Route, Switch, Redirect } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavbarHeader from "./Components/English/Navbar/Navbar";
+import FrontPage from "./Components/English/FrontPage";
+import Gallery from './Components/English/Gallery';
 
-function App() {
+function App(props) {
+  const [langSelection, setLang] = useState(0);
+  const locationHistory = props.location.pathname;
+
+  const changeLang = (num) => {
+    // 0 = English; 1 = Spanish
+    setLang(num);
+  }
+
+  const englishSelection = () => {
+    console.log(locationHistory);
+    return (
+      <div className="vh-100 d-flex flex-column">
+        <NavbarHeader changeLang={changeLang} location={props.location} />
+        <Switch>
+          <Route exact path="/" component={FrontPage} />
+          <Route exact path="/gallery" component={Gallery} />
+        </Switch>
+      </div>
+    );
+  };
+
+  const spanishSelection = () => {
+    return (
+    <>
+    <p>Spanish</p>
+    </>
+    )
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {langSelection == 0 ? englishSelection() : spanishSelection()}
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
