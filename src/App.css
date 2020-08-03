@@ -43,7 +43,7 @@ p {
 }
 
 /*Splash Page */
-.splashPage {
+.splashPage, .servicesSection {
   /* Background image is centered vertically and horizontally at all times */
   background-position: center center;
 
@@ -302,6 +302,12 @@ button:active.green-a {
 }
 /* *** button div END *** */
 
+/*Service section div */
+
+.servicesSection {
+  height: 100%;
+}
+
 /* Desktop */
 @media screen and (min-width: 767.88888px) {
   h1 {
@@ -320,7 +326,6 @@ button:active.green-a {
   /* Navbar */
   .navbar {
     width: 100%;
-    height: 109px;
     padding: 0 !important;
   }
 

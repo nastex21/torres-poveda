@@ -21,7 +21,7 @@ function NavbarHeader({ location, changeLang }) {
       <Navbar
         collapseOnSelect
         expand="md"
-        fixed="sticky"
+        sticky="top"
         className="navbarMain"
         style={{ backgroundColor: "black" }}
       >
