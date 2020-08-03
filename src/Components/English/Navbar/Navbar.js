@@ -21,8 +21,8 @@ function NavbarHeader({ location, changeLang }) {
       <Navbar
         collapseOnSelect
         expand="md"
-        sticky="top"
         className="navbarMain"
+        sticky="top"
         style={{ backgroundColor: "black" }}
       >
         <Navbar.Brand href="#home">

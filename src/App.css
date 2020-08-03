@@ -19,8 +19,8 @@ html {
   height: 100vh;
 }
 
-.App {
-  height: 100vh;
+.min-100 {
+  min-height: 100%;
 }
 
 h1 {
@@ -308,8 +308,22 @@ button:active.green-a {
   height: 100%;
 }
 
+.blackScreen {
+  background-color: rgba(0, 0, 0, 0.45)
+}
+
+@media screen and (max-width: 767.999999px) {
+  .splashPage {
+    height: calc(100vh - 101px);
+  }
+
+  .servicesSection {
+    height: calc(100vh - 101px);
+  }
+}
+
 /* Desktop */
-@media screen and (min-width: 767.88888px) {
+@media screen and (min-width: 768px) {
   h1 {
     font-size: 2.5em !important;
     letter-spacing: 0.023em;

@@ -4,7 +4,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarHeader from "./Components/English/Navbar/Navbar";
 import FrontPage from "./Components/English/FrontPage";
-import Gallery from './Components/English/Gallery';
+import Gallery from "./Components/English/Gallery";
 
 function App(props) {
   const [langSelection, setLang] = useState(0);
@@ -13,27 +13,29 @@ function App(props) {
   const changeLang = (num) => {
     // 0 = English; 1 = Spanish
     setLang(num);
-  }
+  };
 
   const englishSelection = () => {
     console.log(locationHistory);
     return (
-      <div className="vh-100 d-flex flex-column">
-        <NavbarHeader changeLang={changeLang} location={props.location} />
-        <Switch>
-          <Route exact path="/" component={FrontPage} />
-          <Route exact path="/gallery" component={Gallery} />
-        </Switch>
-      </div>
+      <>
+        <div className="container-fluid min-100">
+          <NavbarHeader changeLang={changeLang} location={props.location} />
+          <Switch>
+            <Route exact path="/" component={FrontPage} />
+            <Route exact path="/gallery" component={Gallery} />
+          </Switch>
+        </div>
+      </>
     );
   };
 
   const spanishSelection = () => {
     return (
-    <>
-    <p>Spanish</p>
-    </>
-    )
+      <>
+        <p>Spanish</p>
+      </>
+    );
   };
 
   return (
