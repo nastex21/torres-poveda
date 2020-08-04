@@ -327,24 +327,61 @@ button:active.green-a {
     height: calc(100vh - 101px);
   }
 
+  .sectionServices {
+    display: flex;
+  }
+
   .servicesSection {
-    height: 100vh;
+    display: flex;
+  }
+
+  .blackScreen {
+    align-items: stretch;
+  }
+
+  .headerServices {
+    margin: 1em;
+  }
+
+  .card,
+  .list-group-item {
+    background-color: rgba(0, 0, 0, 0.79) !important;
   }
 
   .circle-icon {
-    width: 60px;
-    height: 60px;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
     background-color: var(--main-green);
     border-radius: 50%;
     position: relative;
+    margin-top: 1em;
   }
 
-  .serviceIcons {
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .circle-icon > img {
+    display: block;
+    margin: auto;
+  }
+
+  .card-img-top {
+    width: 40px !important;
+    height: 40px;
+  }
+
+  .card-title {
+    color: var(--main-white);
+  }
+
+  .list-group-item {
+    color: var(--main-green);
+  }
+
+  .list-group {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .card-title, .list-group-item {
+    text-align: center;
   }
 }
 
