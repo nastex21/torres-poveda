@@ -35,68 +35,106 @@ function FrontPage() {
           </div>
         </Row>
       </Container>
-      <Container fluid className="d-none d-md-block p-0">
+      {/* For Desktop */}
+      <Container fluid className="d-none d-md-block p-0 desktopServices">
         <Row
           className="d-none d-md-block m-0 w-100 servicesSection"
           style={{ backgroundImage: `url(${bathroomTile})` }}
         >
           <div className="w-100 h-100 blackScreen">
-            <Row sm={2}>
+            <Row className="h-100">
               <Col>
-                <h1 className="serviceHeader">Our Services.</h1>
-                <h4 className="serviceQuestion">What can we do for you?</h4>
-                <p className="serviceServices">
-                  We offer a wide range of remodeling services including
-                  bathroom, kitchen, plumbing, electrical, flooring and
-                  texturing.
-                </p>
-              </Col>
-            </Row>
-            <Row sm={10}>
-              <Col xs={4} sm={4}>
-                <div className="circle-icon">
-                  <img
-                    className="serviceIcons"
-                    src={houseIcon}
-                    alt="icon of a house"
-                  />
+                <div className="serviceInfoContent">
+                  <div className="service-first-section">
+                    <p className="serviceHeader">Our Services.</p>
+                  </div>
+                  <div className="service-second-section">
+                    <p className="serviceQuestion">What can we do for you?</p>
+                  </div>
+                  <div className="service-third-section">
+                    <p className="serviceServices">
+                      We offer a wide range of remodeling services including
+                      bathroom, kitchen, plumbing, electrical, flooring and
+                      texturing.
+                    </p>
+                  </div>
                 </div>
-                <h3>Home</h3>
-                <p>Flooring</p>
-                <p>Electrical</p>
-                <p>Wall textures</p>
-                <p>Ceiling textures</p>
-                <p>Painting</p>
               </Col>
-              <Col xs={4} sm={4}>
-                <div className="circle-icon">
-                  <img
-                    className="serviceIcons"
-                    src={kitchenIcon}
-                    alt="icon of a kitchen"
-                  />
+              <Col>
+                <div className="darkerScreen screentopMargin">
+                  <div className="service-padding">
+                    <div className="service-first-section">
+                      <div className="circle-icon">
+                        <img
+                          className="serviceIcons"
+                          src={houseIcon}
+                          alt="icon of a house"
+                        />
+                      </div>
+                    </div>
+                    <div className="service-second-section">
+                      <p className="serviceTitle">Home</p>
+                    </div>
+                    <div className="service-third-section third-section-content">
+                      <p>Flooring</p>
+                      <p>Electrical</p>
+                      <p>Wall textures</p>
+                      <p>Ceiling textures</p>
+                      <p>Painting</p>
+                    </div>
+                  </div>
                 </div>
-                <h3>Kitchen</h3>
-                <p>Cabinets</p>
-                <p>Lighting</p>
               </Col>
-              <Col xs={4} sm={4}>
-                <div className="circle-icon">
-                  <img
-                    className="serviceIcons"
-                    src={tubIcon}
-                    alt="icon of a tub"
-                  />
+              <Col>
+                <div className="darkerScreen screenbottomMargin">
+                  <div className="service-padding">
+                    <div className="service-first-section">
+                      <div className="circle-icon">
+                        <img
+                          className="serviceIcons"
+                          src={kitchenIcon}
+                          alt="icon of a kitchen"
+                        />
+                      </div>
+                    </div>
+                    <div className="service-second-section">
+                      <p className="serviceTitle">Kitchen</p>
+                    </div>
+                    <div className="service-third-section third-section-content kitchen-third">
+                      <p>Cabinets</p>
+                      <p>Lighting</p>
+                    </div>
+                  </div>
                 </div>
-                <h3>Bathroom</h3>
-                <p>Tile</p>
-                <p>Shower</p>
-                <p>Tub</p>
+              </Col>
+              <Col>
+                <div className="darkerScreen screentopMargin">
+                  <div className="service-padding">
+                    <div className="service-first-section">
+                      <div className="circle-icon">
+                        <img
+                          className="serviceIcons"
+                          src={tubIcon}
+                          alt="icon of a tub"
+                        />
+                      </div>
+                    </div>
+                    <div className="service-second-section">
+                      <p className="serviceTitle">Bathroom</p>
+                    </div>
+                    <div className="service-third-section third-section-content">
+                      <p>Tile</p>
+                      <p>Shower</p>
+                      <p>Tub</p>
+                    </div>
+                  </div>
+                </div>
               </Col>
             </Row>
           </div>
         </Row>
       </Container>
+      {/* For Mobile */}
       <Container fluid className="d-md-none p-0 sectionServices">
         <div
           className="servicesSection"

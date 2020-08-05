@@ -3,7 +3,13 @@
   --main-black: black;
   --main-grey: rgba(217, 217, 217, 1);
   --main-green: rgba(144, 225, 147, 1);
-  --nunito-font-big: "Nunito 50px", sans-serif;
+  --section-big-headers: 7vh;
+  --section-weight-headers: 700;
+  --service-top-padding: 18em;
+  --service-padding-sides: 4em;
+  --service-title-size: 40px;
+  --service-title-weight: 500;
+  --service-content-size: 25px;
 }
 
 /* font-family: "Montserrat, ", sans-serif !important;
@@ -13,6 +19,7 @@ body,
 html {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .root {
@@ -23,12 +30,9 @@ html {
   min-height: 100%;
 }
 
-h1 {
-  font-family: var(--nunito-font-big);
-}
-
 p {
   font-family: "Nunito", sans-serif !important;
+  
 }
 
 /* Global nav css */
@@ -315,6 +319,7 @@ button:active.green-a {
 
 .serviceHeader {
   color: var(--main-green);
+  line-height: 1;
 }
 
 .serviceQuestion,
@@ -322,6 +327,17 @@ button:active.green-a {
   color: var(--main-white);
 }
 
+.serviceServices {
+  line-height: 2;
+}
+
+.serviceQuestion, .serviceTitle {
+  font-weight: var(--service-title-weight);
+  font-size: var(--service-title-size);
+  color: var(--main-white);
+}
+
+/* Mobile */
 @media screen and (max-width: 767.999999px) {
   .splashPage {
     height: calc(100vh - 101px);
@@ -421,8 +437,7 @@ button:active.green-a {
   }
 
   .welcomeMsg {
-    position: absolute;
-    top: 20vh;
+    margin-top: 10vh;
     width: 42vw;
     height: 50vh;
   }
@@ -445,6 +460,91 @@ button:active.green-a {
 
   .welcomeHeader > h1 {
     font-weight: 900;
+  }
+
+  /* Service Section */
+  .desktopServices {
+    height: 100vh;
+  }
+
+  .serviceHeader {
+    font-size: var(--section-big-headers);
+    font-weight: var(--section-weight-headers);
+  }
+
+  .serviceInfoContent {
+    height: 100%;
+    padding-top: var(--service-top-padding);
+  }
+
+  .circle-icon {
+    margin: 0 auto;
+    width: 160px;
+    height: 140px;
+    background-color: var(--main-green);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .circle-icon > img {
+    display: block;
+    margin: auto;
+  }
+
+  .blackScreen {
+    background-color: rgba(0, 0, 0, 0.80);
+  }
+
+  .serviceInfoContent, .service-padding {
+    padding-left: var(--service-padding-sides);
+    padding-right: var(--service-padding-sides);
+  }
+
+  .darkerScreen {
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+
+  .screentopMargin {
+    margin-top: calc(var(--service-top-padding) - 1em);
+    height: calc(100vh - var(--service-top-padding));
+  }
+
+  .screenbottomMargin {
+    padding-top: var(--service-top-padding);
+  }
+
+  .service-padding {
+    height: 100%;
+    padding-top: 1.5em;
+  }
+
+  .service-padding > p {
+    color: var(--main-white);
+  }
+
+  .darkerScreen > p {
+    color: var(--main-green);
+  }
+
+  .service-first-section{
+    height: calc(var(--section-big-headers) + 9em);
+  }
+
+  .service-second-section {
+    height: calc(var(--service-title-size) + 7em);
+  }
+
+  .service-third-section {
+    padding-top: 3em;
+    font-size: var(--service-content-size);
+  }
+
+  .third-section-content {
+    color: var(--main-green);
+  }
+
+  .kitchen-third {
+    padding-bottom: 1em;
   }
 
   /*Nav bar */
