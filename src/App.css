@@ -3,13 +3,13 @@
   --main-black: black;
   --main-grey: rgba(217, 217, 217, 1);
   --main-green: rgba(144, 225, 147, 1);
-  --section-big-headers: 7vh;
+  --section-big-headers: 6vh;
   --section-weight-headers: 700;
-  --service-top-padding: 18em;
-  --service-padding-sides: 4em;
-  --service-title-size: 40px;
-  --service-title-weight: 500;
-  --service-content-size: 25px;
+  --service-top-padding: 30vh;
+  --service-padding-sides: 1em;
+  --service-title-size: 3vh;
+  --service-title-weight: 800;
+  --service-content-size: 2vh;
 }
 
 /* font-family: "Montserrat, ", sans-serif !important;
@@ -319,7 +319,7 @@ button:active.green-a {
 
 .serviceHeader {
   color: var(--main-green);
-  line-height: 1;
+  line-height: 1em;
 }
 
 .serviceQuestion,
@@ -328,7 +328,7 @@ button:active.green-a {
 }
 
 .serviceServices {
-  line-height: 2;
+  line-height: 2em;
 }
 
 .serviceQuestion, .serviceTitle {
@@ -455,9 +455,6 @@ button:active.green-a {
     border: 3px solid grey;
   }
 
-  .btn-estimate-text {
-  }
-
   .welcomeHeader > h1 {
     font-weight: 900;
   }
@@ -479,14 +476,16 @@ button:active.green-a {
 
   .circle-icon {
     margin: 0 auto;
-    width: 160px;
-    height: 140px;
+    width: 7vw;
+    height: 10vh;
     background-color: var(--main-green);
     border-radius: 50%;
     position: relative;
   }
 
   .circle-icon > img {
+    width: 6vw;
+    height: 8vh;
     display: block;
     margin: auto;
   }
@@ -506,16 +505,19 @@ button:active.green-a {
 
   .screentopMargin {
     margin-top: calc(var(--service-top-padding) - 1em);
-    height: calc(100vh - var(--service-top-padding));
+    height: calc(100vh - var(--service-top-padding) + 1em);
+    width: 75%;
   }
 
   .screenbottomMargin {
-    padding-top: var(--service-top-padding);
+    padding-top: calc(var(--service-top-padding) - 1em);
+    width: 75%;
   }
 
   .service-padding {
     height: 100%;
     padding-top: 1.5em;
+    
   }
 
   .service-padding > p {
@@ -527,15 +529,15 @@ button:active.green-a {
   }
 
   .service-first-section{
-    height: calc(var(--section-big-headers) + 9em);
+    height: calc(var(--section-big-headers) + 15vh);
   }
 
   .service-second-section {
-    height: calc(var(--service-title-size) + 7em);
+    height: calc(var(--service-title-size) + 3em);
   }
 
   .service-third-section {
-    padding-top: 3em;
+    padding-top: .2em;
     font-size: var(--service-content-size);
   }
 
