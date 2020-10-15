@@ -6,10 +6,17 @@ function Gallery() {
     var imageApi = "/api/get-images";
     console.log('image gallery');
 
-    axios.get(imageApi).then((response) => {
-      
+    axios.get(imageApi).then((response, err) => {
+      console.log("inside")
+      if (response){
+        console.log('response');
+        console.log(response)
+      } else {
+        console.log('else');
+        console.err(err);
+      }
   })
-})
+}, [])
 
 return (
   <p>HI!</p>
