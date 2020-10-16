@@ -14,14 +14,18 @@ router.get('/', (req, res) => {
   // Iterate recursively through a folder
   readdirp('./client/src/assets/Images', { type: 'files', fileFilter: ['*.jpg', '*jpeg', '*.png'], depth: 1 })
     .on('data', (entry) => {
-      const { path } = entry;
-      allFilePaths.push(path);   
+      var { path } = entry;
+
+      var dataObj = {};
+      path = path.replace(/\\/g, "/");
+      dataObj.src = '../../assets/Images/' + path;
+
+      allFilePaths.push(dataObj);  
     })
     // Optionally call stream.destroy() in `warn()` in order to abort and cause 'close' to be emitted
     .on('warn', error => console.error('non-fatal error', error))
     .on('error', error => console.error('fatal error', error))
     .on('end', () => res.send(allFilePaths));
-
 }
 );
 
