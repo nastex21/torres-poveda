@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
-const directoryPath = path.join(__dirname, '../../client/public/gallery_photos');
 const readdirp = require('readdirp');
 
 router.get('/', (req, res) => {
