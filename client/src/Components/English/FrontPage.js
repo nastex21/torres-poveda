@@ -5,11 +5,11 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import ListGroup from "react-bootstrap/ListGroup";
-import splashImage from "../../assets/Background/splash.jpg";
-import bathroomTile from "../../assets/Background/bathroomtile.jpg";
-import houseIcon from "../../assets/Icons/house.png";
-import kitchenIcon from "../../assets/Icons/kitchen.png";
-import tubIcon from "../../assets/Icons/tub.png";
+import splashImage from "../../assets/background/splash.jpg";
+import bathroomTile from "../../assets/background/bathroomtile.jpg";
+import houseIcon from "../../assets/icons/house.png";
+import kitchenIcon from "../../assets/icons/kitchen.png";
+import tubIcon from "../../assets/icons/tub.png";
 
 function FrontPage() {
   return (
