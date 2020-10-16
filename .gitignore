@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 /client/node_modules
-/client/src/assets
+/client/public/gallery_photos
 
 # testing
 /coverage

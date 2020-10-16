@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const path = require('path');
-const directoryPath = path.join(__dirname, '../../client/src/assets/Images');
+const directoryPath = path.join(__dirname, '../../client/public/gallery_photos');
 const readdirp = require('readdirp');
-//const testFolder = '../../client/src/assets/Images/';
 
 router.get('/', (req, res) => {
 
@@ -12,14 +11,17 @@ router.get('/', (req, res) => {
   var allFilePaths = [];
 
   // Iterate recursively through a folder
-  readdirp('./client/src/assets/Images', { type: 'files', fileFilter: ['*.jpg', '*jpeg', '*.png'], depth: 1 })
+  readdirp('./client/public/gallery_photos', { type: 'files', fileFilter: ['*.jpg', '*jpeg', '*.png'], depth: 1 })
     .on('data', (entry) => {
       var { path } = entry;
 
       var dataObj = {};
       path = path.replace(/\\/g, "/");
-      dataObj.src = '../../assets/Images/' + path;
-
+      console.log(path);
+      dataObj.src = '/gallery_photos/' + path;
+      dataObj.width = 1;
+      dataObj.height = 1;
+      console.log(dataObj);
       allFilePaths.push(dataObj);  
     })
     // Optionally call stream.destroy() in `warn()` in order to abort and cause 'close' to be emitted
