@@ -4,13 +4,30 @@ import axios from "axios";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import GalleryModule from "react-photo-gallery";
 import Measure from 'react-measure';
+import debounce from 'debounce';
 
 function Gallery() {
   const [imageArray, setArray] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const [width, setWidth] = useState(0);
-  
+  //Dynamic Loading
+  const [images, setImages] = useState([]);
+  const [pageNum, setPageNum] = useState(1);
+  const [loadedAll, setLoadedAll] = useState(false);
+  const TOTAL_PAGES = 3;
+
+  const loadMorePhotos = debounce(() => {
+    console.log("triggered")
+    if (pageNum > TOTAL_PAGES) {
+      setLoadedAll(true);
+      return;
+    }
+
+    setImages(images.concat(imageArray.slice(images.length, images.length + 6)));
+    setPageNum(pageNum + 1);
+  }, 200);
+
   useEffect(() => {
     var imageApi = "/api/get-images";
 
@@ -20,6 +37,25 @@ function Gallery() {
       }
     });
   }, []);
+
+  useEffect(() => {
+    setImages(imageArray.slice(0, 6))
+  }, [imageArray])
+
+  useEffect(() => {
+    document.body.addEventListener("scroll", handleScroll);
+    return () => document.body.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleScroll = () => {
+    let scrollY =
+      document.body.scrollY ||
+      document.body.pageYOffset ||
+      document.documentElement.scrollTop;
+    if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
+      loadMorePhotos();
+    }
+  };
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
@@ -51,7 +87,7 @@ function Gallery() {
           }   
           return (
           <Container>
-          <GalleryModule photos={imageArray} onClick={openLightbox} />
+          <GalleryModule photos={images} onClick={openLightbox} />
           <ModalGateway>
             {viewerIsOpen ? (
               <Modal onClose={closeLightbox}>
