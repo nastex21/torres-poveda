@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import logo from "../../../assets/logo/blackwhitepovedalogo.jpg";
+import logo from "../../../assets/Logo/blackwhitepovedalogo.jpg";
 
 function NavbarHeader({ location, changeLang }) {
   const selectEnglish = () => {
