@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Container from "react-bootstrap/Container";
 import axios from "axios";
+import useInfiniteScroll from "../util/useInfiniteScroll";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import GalleryModule from "react-photo-gallery";
 import Measure from "react-measure";
-import InfiniteScroll from "react-infinite-scroller";
 
 function Gallery() {
   const [imageArray, setArray] = useState([]);
   const [images, setImages] = useState([]);
+
   const [apiRequestLoaded, setRequest] = useState(false);
 
   const [hasMoreItems, setHasMoreItems] = useState(true);
@@ -16,6 +17,7 @@ function Gallery() {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
   const [width, setWidth] = useState(0);
+  const [isFetching, setIsFetching] = useInfiniteScroll(loadMorePhotos);
 
   //get original set of photos
   const getPhotos = () => {
@@ -24,21 +26,22 @@ function Gallery() {
     axios.get(imageApi).then((response, err) => {
       if (response) {
         setArray([...imageArray, ...response.data]);
-        setRequest(true)
+        setRequest(true);
       }
     });
   };
 
   //get next slice of photos
-  const loadMorePhotos = () => {
+  function loadMorePhotos() {
     console.log("constantly being called");
-    console.log(
-      images.concat(imageArray.slice(images.length, images.length + 6))
-    );
-    setImages(
-      images.concat(imageArray.slice(images.length, images.length + 6))
-    );
-  };
+
+    setTimeout(() => {
+      setImages(
+        images.concat(imageArray.slice(images.length, images.length + 6))
+      );
+      setIsFetching(false);
+    }, 2000);
+  }
 
   useEffect(() => {
     console.log("being called");
@@ -47,7 +50,9 @@ function Gallery() {
 
   useEffect(() => {
     if (images.length == 0) {
-      setImages(imageArray.slice(0, 6));
+      setImages(
+        images.concat(imageArray.slice(images.length, images.length + 6))
+      );
     }
   }, [imageArray]);
 
@@ -59,6 +64,9 @@ function Gallery() {
     }
   }, [images]);
 
+  /*   {images.map((item, i)  => <img src={item.src}  key={i} style={{height: '1200px', width: '100px'}}/>)}
+   */
+
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
     setViewerIsOpen(true);
@@ -69,35 +77,18 @@ function Gallery() {
     setViewerIsOpen(false);
   };
 
-  const ImageDiv = () => {
-    var items = [];
-    images.map((track, i) => {
-      items.push(
-        <div className="track" key={i}>
-          <img src={track.src} alt="" width="150" height="150" />
-        </div>
-      );
-    });
-    return items;
+  const imageScroll = () => {
+    console.log("called");
+    return (
+      <Container>
+        <GalleryModule photos={images} onClick={openLightbox} />
+
+        {isFetching && "Fetching more list items..."}
+      </Container>
+    );
   };
 
-  const loader = <div className="loader">Loading ...</div>;
-
-  console.log(imageArray);
-  console.log(images);
-  return (
-   <Container style={{height:100 + 'vh', overflow: 'auto'}} >
-      <InfiniteScroll
-        pageStart={0}
-        loadMore={apiRequestLoaded ? loadMorePhotos : null}
-        hasMore={hasMoreItems}
-        loader={loader}
-        useWindow={false}
-        >
-        <GalleryModule photos={images} onClick={openLightbox} />
-      </InfiniteScroll>
-    </Container>
-  );
+  return <>{imageArray.length > 0 ? imageScroll() : null}</>;
 }
 
 export default Gallery;

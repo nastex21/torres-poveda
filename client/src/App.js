@@ -19,13 +19,13 @@ function App(props) {
     console.log(locationHistory);
     return (
       <>
-        <div className="container-fluid p-0">
+        <>
           <NavbarHeader changeLang={changeLang} location={props.location} />
           <Switch>
             <Route exact path="/" component={FrontPage} />
             <Route exact path="/gallery" component={Gallery} />
           </Switch>
-        </div>
+        </>
       </>
     );
   };
