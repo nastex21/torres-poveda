@@ -4,8 +4,8 @@ const useInfiniteScroll = (callback) => {
   const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
-    document.body.addEventListener('scroll', handleScroll);
-    return () => document.body.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -16,16 +16,10 @@ const useInfiniteScroll = (callback) => {
   }, [isFetching]);
 
   function handleScroll() {
-
-    console.log(document.body.scrollHeight);
-    console.log(window.pageYOffset);
-    console.log(document.documentElement.scrollTop);
-    console.log(document.documentElement.offsetHeight);
-    console.log(document.body.clientHeight);
-    console.log(document.documentElement.clientHeight);
-    var scrollTop = window.pageYOffset;
-    console.log(scrollTop);
-    if ( document.body.scrollHeight > document.documentElement.offsetHeight || isFetching) return;
+    console.log('innerHeight: ' + window.innerHeight);
+    console.log('scrollTop: ' +  document.documentElement.scrollTop);
+    console.log('offsetHeight: ' +  document.documentElement.offsetHeight);
+    if ( window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isFetching) return;
     setIsFetching(true);
   }
 
