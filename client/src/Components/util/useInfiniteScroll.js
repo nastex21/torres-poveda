@@ -16,13 +16,11 @@ const useInfiniteScroll = (callback) => {
   }, [isFetching]);
 
   function handleScroll() {
-    console.log('pageYoffset: ' + window.pageYOffset);
-    console.log('innerHeight: ' + window.innerHeight);
-    console.log('scrollTop: ' +  document.documentElement.scrollTop);
-    console.log('offsetHeight: ' +  document.documentElement.offsetHeight);
+    var sum = ((Number(window.innerHeight) + Number(document.documentElement.scrollTop) + 100));
    
-    if ( window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isFetching) return;
-    setIsFetching(true);
+    if (sum >= document.documentElement.scrollHeight) {
+      return setIsFetching(true);
+    }
   }
 
   return [isFetching, setIsFetching];
