@@ -80,11 +80,11 @@ function Gallery() {
   const imageScroll = () => {
     console.log("called");
     return (
-      <Container>
+      <>
         <GalleryModule photos={images} onClick={openLightbox} />
 
         {isFetching && "Fetching more list items..."}
-      </Container>
+      </>
     );
   };
 
