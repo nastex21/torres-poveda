@@ -21,10 +21,10 @@ html {
   width: 100vw;
 }
 
-body {
+/* body {
   overflow-y: scroll;
 }
-
+ */
 .root {
   height: 100vh;
 }
