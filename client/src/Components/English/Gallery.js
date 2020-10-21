@@ -3,13 +3,13 @@ import axios from "axios";
 import useInfiniteScroll from "../util/useInfiniteScroll";
 import GalleryModule from "react-photo-gallery";
 import Container from "react-bootstrap/Container";
-//import SimpleModalSlideshow from 'react-modal-slideshow';
+import SimpleReactLightbox from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 
 function Gallery() {
   const [imageArray, setArray] = useState([]); //original fetched, huge array
   const [images, setImages] = useState([]); //new spliced images array
   const [isFetching, setIsFetching] = useInfiniteScroll(addMoreImages);
-  const slides = [];
 
   //get original set of photos
   const getPhotos = () => {
@@ -22,24 +22,6 @@ function Gallery() {
       }
     });
   };
-
-  function handlePrev(index) {
-    this.setState({
-      currentSlide: index,
-    });
-  }
-
-  function handleNext(index) {
-    this.setState({
-      currentSlide: index,
-    });
-  }
-
- function handleClose() {
-    this.setState({
-      open: false,
-    });
-  }
 
 
   function addMoreImages() {
@@ -73,19 +55,14 @@ function Gallery() {
   const imageScroll = () => {
     console.log("called");
     return (
-        <Container>
-          <GalleryModule photos={images} />
-    {/*       <SimpleModalSlideshow
-          slides={slides}
-          currentSlide={this.state.currentSlide}
-          open={this.state.open}
-          onClose={handleClose}
-          onNext={handleNext}
-          onPrev={handlePrev}
-          classNamePrefix="modal-slideshow-example1"
-        /> */}
-          {isFetching && "Fetching more list items..."}
-        </Container>
+      <Container>
+        <SimpleReactLightbox>
+          <SRLWrapper>
+            <GalleryModule photos={images} />
+          </SRLWrapper>
+        </SimpleReactLightbox>
+        {isFetching && "Fetching more list items..."}
+      </Container>
     );
   };
 
