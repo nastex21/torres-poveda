@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useInfiniteScroll from "../util/useInfiniteScroll";
-import GalleryModule from "react-photo-gallery";
 import Container from "react-bootstrap/Container";
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 import SimpleReactLightbox from "simple-react-lightbox";
 import { SRLWrapper } from "simple-react-lightbox";
 
@@ -13,7 +14,6 @@ function Gallery() {
 
   //get original set of photos
   const getPhotos = () => {
-    console.log("getPhotos()");
     var imageApi = "/api/get-images";
 
     axios.get(imageApi).then((response, err) => {
@@ -25,26 +25,22 @@ function Gallery() {
 
 
   function addMoreImages() {
-    console.log("addMoreImages()");
-
     setTimeout(() => {
       setImages(
-        images.concat(imageArray.slice(images.length, images.length + 6))
+        images.concat(imageArray.slice(images.length, images.length + 12))
       );
       setIsFetching(false);
     }, 2000);
   }
 
   useEffect(() => {
-    console.log("useEffect, []");
     getPhotos();
   }, []);
 
   useEffect(() => {
-    console.log("useEffect, [imageArray]");
     if (images.length == 0) {
       var newImages = images.concat(
-        imageArray.slice(images.length, images.length + 6)
+        imageArray.slice(images.length, images.length + 12)
       );
       console.log(newImages);
       setImages([...images, ...newImages]);
@@ -53,15 +49,19 @@ function Gallery() {
 
 
   const imageScroll = () => {
-    console.log("called");
     return (
       <Container>
         <SimpleReactLightbox>
           <SRLWrapper>
-            <GalleryModule photos={images} />
+            <Row xs={2} md={4}>
+              {images.map(item =>
+                <Image src={item.src} thumbnail />
+              )
+              }
+            </Row>
           </SRLWrapper>
         </SimpleReactLightbox>
-        {isFetching && "Fetching more list items..."}
+        {images.length !== imageArray.length && isFetching ? "Fetching more list items..." : null}
       </Container>
     );
   };

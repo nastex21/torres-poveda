@@ -14,11 +14,7 @@ router.get('/', (req, res) => {
 
       var dataObj = {};
       path = path.replace(/\\/g, "/");
-      console.log(path);
       dataObj.src = '/gallery_photos/' + path;
-      dataObj.width = 1;
-      dataObj.height = 1;
-      console.log(dataObj);
       allFilePaths.push(dataObj);  
     })
     // Optionally call stream.destroy() in `warn()` in order to abort and cause 'close' to be emitted
