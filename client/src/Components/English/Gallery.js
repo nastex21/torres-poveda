@@ -89,7 +89,7 @@ function Gallery() {
           onHide={() => setShow(false)}
         >
           <ModalBody>
-            <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel activeIndex={index} onSelect={handleSelect} controls={true}>
               {images.map((item, num) => (
                 <CarouselItem>
                   <Image
