@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarHeader from "./Components/English/Navbar/Navbar";
 import FrontPage from "./Components/English/FrontPage";
 import Gallery from "./Components/English/Gallery";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 function App(props) {
   const [langSelection, setLang] = useState(0);
@@ -39,9 +40,11 @@ function App(props) {
   };
 
   return (
-    <div className="App">
-      {langSelection == 0 ? englishSelection() : spanishSelection()}
-    </div>
+    <SimpleReactLightbox>
+      <div className="App">
+        {langSelection == 0 ? englishSelection() : spanishSelection()}
+      </div>
+    </SimpleReactLightbox>
   );
 }
 

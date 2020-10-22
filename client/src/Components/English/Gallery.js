@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useInfiniteScroll from "../util/useInfiniteScroll";
 import Container from "react-bootstrap/Container";
+import { SRLWrapper } from "simple-react-lightbox";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Modal from "react-bootstrap/Modal";
@@ -66,49 +67,26 @@ function Gallery() {
   console.log(index);
   const imageScroll = () => {
     return (
-      <Container>
-        <Row xs={2} md={4} data-toggle="modal" data-target="#imageModal">
-          {images.map((item, num) => (
-            <Image
-              src={item.src}
-              key={num}
-              className="w-100"
-              data-target="#carousel"
-              data-slide-to={num}
-              thumbnail
-              onClick={() => clickModal(num)}
-            />
-          ))}
-        </Row>
-        <Modal
-          id="imageModal"
-          tabIndex="-1"
-          role="dialog"
-          aria-hidden="true"
-          show={show}
-          onHide={() => setShow(false)}
-        >
-          <ModalBody>
-            <Carousel activeIndex={index} onSelect={handleSelect} controls={true}>
-              {images.map((item, num) => (
-                <CarouselItem>
-                  <Image
-                    src={item.src}
-                    key={num}
-                    className="w-100"
-                    data-target="#carousel"
-                    data-slide-to={num}
-                  />
-                </CarouselItem>
-              ))}
-            </Carousel>
-          </ModalBody>
-        </Modal>
-
-        {images.length !== imageArray.length && isFetching
+      <SRLWrapper>
+        <Container>
+          <Row xs={2} md={4}>
+            {images.map((item, num) => (
+              <Image
+                src={item.src}
+                key={num}
+                className="w-100"
+                data-target="#carousel"
+                data-slide-to={num}
+                thumbnail
+                onClick={() => clickModal(num)}
+              />
+            ))}
+          </Row>
+          {images.length !== imageArray.length && isFetching
           ? "Fetching more images.."
           : null}
-      </Container>
+        </Container>
+      </SRLWrapper>
     );
   };
 
