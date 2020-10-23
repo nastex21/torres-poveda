@@ -321,6 +321,7 @@ button:active.green-a {
   color: var(--main-white);
 }
 
+
 /* Mobile */
 @media screen and (max-width: 767.999999px) {
   .splashPage {
