@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
+import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import ListGroup from "react-bootstrap/ListGroup";
-import splashImage from "../../assets/Background/splash.jpg";
-import bathroomTile from "../../assets/Background/bathroomtile.jpg";
 import houseIcon from "../../assets/Icons/house.png";
 import kitchenIcon from "../../assets/Icons/kitchen.png";
 import tubIcon from "../../assets/Icons/tub.png";
@@ -14,11 +13,9 @@ import tubIcon from "../../assets/Icons/tub.png";
 function FrontPage() {
   return (
     <>
-      <Container fluid className="p-0">
+      <Jumbotron fluid>
         <Row
-          className="m-0 w-100 splashPage"
-          style={{ backgroundImage: `url(${splashImage})` }}
-        >
+          className="m-0 w-100 splashPage">
           <div className="welcomeMsg">
             <div className="welcomeHeader">
               <h1>Turning remodeling dreams into REALITY.</h1>
@@ -34,13 +31,10 @@ function FrontPage() {
             </div>
           </div>
         </Row>
-      </Container>
+      </Jumbotron>
       {/* For Desktop */}
       <Container fluid className="d-none d-md-block p-0 desktopServices">
-        <Row
-          className="d-none d-md-block m-0 w-100 servicesSection"
-          style={{ backgroundImage: `url(${bathroomTile})` }}
-        >
+        <Row className="d-none d-md-block m-0 w-100 servicesSection">
           <div className="w-100 h-100 blackScreen">
             <Row className="h-100">
               <Col>
@@ -136,10 +130,7 @@ function FrontPage() {
       </Container>
       {/* For Mobile */}
       <Container fluid className="d-md-none p-0 sectionServices">
-        <div
-          className="servicesSection"
-          style={{ backgroundImage: `url(${bathroomTile})` }}
-        >
+        <div className="servicesSection">
           <div className="w-100 h-100 blackScreen">
             <div className="headerServices">
               <h3 className="serviceHeader">Our Services.</h3>

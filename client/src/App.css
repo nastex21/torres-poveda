@@ -35,7 +35,6 @@ html {
 
 p {
   font-family: "Nunito", sans-serif !important;
-  
 }
 
 /* Global nav css */
@@ -50,25 +49,6 @@ p {
 }
 
 /*Splash Page */
-.splashPage,
-.servicesSection {
-  /* Background image is centered vertically and horizontally at all times */
-  background-position: center center;
-
-  /* Background image doesn't tile */
-  background-repeat: no-repeat;
-
-  /* Background image is fixed in the viewport so that it doesn't move when 
-        the content's height is greater than the image's height */
-  /* background-attachment: fixed;
- */
-  /* This is what makes the background image rescale based
-        on the container's size */
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
 
 .hamburgerIcon {
   color: var(--main-grey);
@@ -334,7 +314,8 @@ button:active.green-a {
   line-height: 2em;
 }
 
-.serviceQuestion, .serviceTitle {
+.serviceQuestion,
+.serviceTitle {
   font-weight: var(--service-title-weight);
   font-size: var(--service-title-size);
   color: var(--main-white);
@@ -399,16 +380,21 @@ button:active.green-a {
     background-color: rgba(255, 255, 255, 1);
   }
 
-  .card-title, .list-group-item {
+  .card-title,
+  .list-group-item {
     text-align: center;
   }
 }
 
 @media screen and (min-width: 780px) and (max-width: 1079.99px) {
-    h1, h2, h3, h4, h5, p { 
-     color: red !important;
-    }
-
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    color: red !important;
+  }
 }
 
 /* Desktop */
@@ -438,7 +424,31 @@ button:active.green-a {
   }
 
   .brandImage {
-    height: 6.5rem !important;
+    /* height: 6.5rem !important; */
+  }
+
+  /* Jumbotron test */
+  .jumbotron {
+    background: url("/background/splash.jpg");
+    background-attachment: fixed;
+    color: white !important;
+    height: 100vh;
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+
+    /* Background image is fixed in the viewport so that it doesn't move when 
+        the content's height is greater than the image's height */
+    /* background-attachment: fixed;
+ */
+    /* This is what makes the background image rescale based
+        on the container's size */
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
   }
 
   /*Splash Page */
@@ -501,10 +511,11 @@ button:active.green-a {
   }
 
   .blackScreen {
-    background-color: rgba(0, 0, 0, 0.80);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
-  .serviceInfoContent, .service-padding {
+  .serviceInfoContent,
+  .service-padding {
     padding-left: var(--service-padding-sides);
     padding-right: var(--service-padding-sides);
   }
@@ -527,7 +538,6 @@ button:active.green-a {
   .service-padding {
     height: 100%;
     padding-top: 1.5em;
-    
   }
 
   .service-padding > p {
@@ -538,7 +548,7 @@ button:active.green-a {
     color: var(--main-green);
   }
 
-  .service-first-section{
+  .service-first-section {
     height: calc(var(--section-big-headers) + 15vh);
   }
 
@@ -547,7 +557,7 @@ button:active.green-a {
   }
 
   .service-third-section {
-    padding-top: .2em;
+    padding-top: 0.2em;
     font-size: var(--service-content-size);
   }
 
@@ -559,8 +569,4 @@ button:active.green-a {
     padding-bottom: 1em;
   }
 
-  /*Nav bar */
-  .navbar-nav > .nav-link {
-    padding: 4em !important;
-  }
 }
