@@ -14,120 +14,123 @@ function FrontPage() {
   return (
     <>
       <Jumbotron fluid>
-        <Row
-          className="m-0 w-100 splashPage">
-          <div className="welcomeMsg">
-            <div className="welcomeHeader">
-              <h1>Turning remodeling dreams into REALITY.</h1>
+        <Container>
+          <Row className="m-0 w-100 splashPage">
+            <div className="welcomeMsg">
+              <div className="welcomeHeader">
+                <h1>Turning remodeling dreams into REALITY.</h1>
+              </div>
+              <div className="welcomeContact">
+                <p>Contact us for a FREE estimate on remodeling your home.</p>
+              </div>
+              <div className="welcomeDirection">
+                <p>Just click on the button below!</p>
+              </div>
+              <div className="welcomeBtn w-100">
+                <button className="button glass green-a">FREE ESTIMATE</button>
+              </div>
             </div>
-            <div className="welcomeContact">
-              <p>Contact us for a FREE estimate on remodeling your home.</p>
-            </div>
-            <div className="welcomeDirection">
-              <p>Just click on the button below!</p>
-            </div>
-            <div className="welcomeBtn w-100">
-              <button className="button glass green-a">FREE ESTIMATE</button>
-            </div>
-          </div>
-        </Row>
+          </Row>
+        </Container>
       </Jumbotron>
       {/* For Desktop */}
-      <Container fluid className="d-none d-md-block p-0 desktopServices">
-        <Row className="d-none d-md-block m-0 w-100 servicesSection">
-          <div className="w-100 h-100 blackScreen">
-            <Row className="h-100">
-              <Col>
-                <div className="serviceInfoContent">
-                  <div className="service-first-section">
-                    <p className="serviceHeader">Our Services.</p>
-                  </div>
-                  <div className="service-second-section">
-                    <p className="serviceQuestion">What can we do for you?</p>
-                  </div>
-                  <div className="service-third-section">
-                    <p className="serviceServices">
-                      We offer a wide range of remodeling services including
-                      bathroom, kitchen, plumbing, electrical, flooring and
-                      texturing.
-                    </p>
-                  </div>
-                </div>
-              </Col>
-              <Col>
-                <div className="darkerScreen screentopMargin">
-                  <div className="service-padding">
+      <div w-100 className="desktopServices">
+        <Container className="d-none d-md-block p-0">
+          <Row className="d-none d-md-block m-0 w-100 servicesSection">
+            <div className="w-100 h-100 blackScreen">
+              <Row className="h-100">
+                <Col>
+                  <div className="serviceInfoContent">
                     <div className="service-first-section">
-                      <div className="circle-icon">
-                        <img
-                          className="serviceIcons"
-                          src={houseIcon}
-                          alt="icon of a house"
-                        />
-                      </div>
+                      <p className="serviceHeader">Our Services.</p>
                     </div>
                     <div className="service-second-section">
-                      <p className="serviceTitle">Home</p>
+                      <p className="serviceQuestion">What can we do for you?</p>
                     </div>
-                    <div className="service-third-section third-section-content">
-                      <p>Flooring</p>
-                      <p>Electrical</p>
-                      <p>Wall textures</p>
-                      <p>Ceiling textures</p>
-                      <p>Painting</p>
+                    <div className="service-third-section">
+                      <p className="serviceServices">
+                        We offer a wide range of remodeling services including
+                        bathroom, kitchen, plumbing, electrical, flooring and
+                        texturing.
+                      </p>
                     </div>
                   </div>
-                </div>
-              </Col>
-              <Col>
-                <div className="darkerScreen screenbottomMargin">
-                  <div className="service-padding">
-                    <div className="service-first-section">
-                      <div className="circle-icon">
-                        <img
-                          className="serviceIcons"
-                          src={kitchenIcon}
-                          alt="icon of a kitchen"
-                        />
+                </Col>
+                <Col>
+                  <div className="darkerScreen screentopMargin">
+                    <div className="service-padding">
+                      <div className="service-first-section">
+                        <div className="circle-icon">
+                          <img
+                            className="serviceIcons"
+                            src={houseIcon}
+                            alt="icon of a house"
+                          />
+                        </div>
+                      </div>
+                      <div className="service-second-section">
+                        <p className="serviceTitle">Home</p>
+                      </div>
+                      <div className="service-third-section third-section-content">
+                        <p>Flooring</p>
+                        <p>Electrical</p>
+                        <p>Wall textures</p>
+                        <p>Ceiling textures</p>
+                        <p>Painting</p>
                       </div>
                     </div>
-                    <div className="service-second-section">
-                      <p className="serviceTitle">Kitchen</p>
-                    </div>
-                    <div className="service-third-section third-section-content kitchen-third">
-                      <p>Cabinets</p>
-                      <p>Lighting</p>
-                    </div>
                   </div>
-                </div>
-              </Col>
-              <Col>
-                <div className="darkerScreen screentopMargin">
-                  <div className="service-padding">
-                    <div className="service-first-section">
-                      <div className="circle-icon">
-                        <img
-                          className="serviceIcons"
-                          src={tubIcon}
-                          alt="icon of a tub"
-                        />
+                </Col>
+                <Col>
+                  <div className="darkerScreen screenbottomMargin">
+                    <div className="service-padding">
+                      <div className="service-first-section">
+                        <div className="circle-icon">
+                          <img
+                            className="serviceIcons"
+                            src={kitchenIcon}
+                            alt="icon of a kitchen"
+                          />
+                        </div>
+                      </div>
+                      <div className="service-second-section">
+                        <p className="serviceTitle">Kitchen</p>
+                      </div>
+                      <div className="service-third-section third-section-content kitchen-third">
+                        <p>Cabinets</p>
+                        <p>Lighting</p>
                       </div>
                     </div>
-                    <div className="service-second-section">
-                      <p className="serviceTitle">Bathroom</p>
-                    </div>
-                    <div className="service-third-section third-section-content">
-                      <p>Tile</p>
-                      <p>Shower</p>
-                      <p>Tub</p>
+                  </div>
+                </Col>
+                <Col>
+                  <div className="darkerScreen screentopMargin">
+                    <div className="service-padding">
+                      <div className="service-first-section">
+                        <div className="circle-icon">
+                          <img
+                            className="serviceIcons"
+                            src={tubIcon}
+                            alt="icon of a tub"
+                          />
+                        </div>
+                      </div>
+                      <div className="service-second-section">
+                        <p className="serviceTitle">Bathroom</p>
+                      </div>
+                      <div className="service-third-section third-section-content">
+                        <p>Tile</p>
+                        <p>Shower</p>
+                        <p>Tub</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Col>
-            </Row>
-          </div>
-        </Row>
-      </Container>
+                </Col>
+              </Row>
+            </div>
+          </Row>
+        </Container>
+      </div>
       {/* For Mobile */}
       <Container fluid className="d-md-none p-0 sectionServices">
         <div className="servicesSection">

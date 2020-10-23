@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../../assets/Logo/blackwhitepovedalogo.jpg";
+import Container from "react-bootstrap/Container";
 
 function NavbarHeader({ location, changeLang }) {
   const selectEnglish = () => {
@@ -24,32 +25,34 @@ function NavbarHeader({ location, changeLang }) {
         className="navbarMain"
         style={{ backgroundColor: "black" }}
       >
-        <Navbar.Brand href="#home">
-          <img
-            alt=""
-            src={logo}
-            className="d-inline-block align-top brandImage img-responsive"
-          />
-        </Navbar.Brand>
-        <Navbar.Text
-          className="active"
-          onClick={selectEnglish}
-          style={{ cursor: "pointer" }}
-        >
-          Eng
-        </Navbar.Text>
-        <Navbar.Text
-          className="inactiveLang"
-          onClick={selectSpanish}
-          style={{ cursor: "pointer" }}
-        >
-          Esp
-        </Navbar.Text>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={logo}
+              className="d-inline-block align-top brandImage img-responsive"
+            />
+          </Navbar.Brand>
+          <Navbar.Text
+            className="active"
+            onClick={selectEnglish}
+            style={{ cursor: "pointer" }}
+          >
+            Eng
+          </Navbar.Text>
+          <Navbar.Text
+            className="inactiveLang"
+            onClick={selectSpanish}
+            style={{ cursor: "pointer" }}
+          >
+            Esp
+          </Navbar.Text>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav">
           <span>
             <FontAwesomeIcon icon={faBars} className="hamburgerIcon" />
           </span>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link
@@ -72,6 +75,8 @@ function NavbarHeader({ location, changeLang }) {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        </Container>
+ 
       </Navbar>
     </>
   );
