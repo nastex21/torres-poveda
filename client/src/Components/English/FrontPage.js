@@ -13,10 +13,10 @@ import tubIcon from "../../assets/Icons/tub.png";
 function FrontPage() {
   return (
     <>
-      <Jumbotron fluid>
-        <Container>
+      <Jumbotron>
+        <Container w-100>
           <Row className="m-0 w-100 splashPage">
-            <div className="welcomeMsg">
+            <div className="welcomeMsg w-100">
               <div className="welcomeHeader">
                 <h1>Turning remodeling dreams into REALITY.</h1>
               </div>

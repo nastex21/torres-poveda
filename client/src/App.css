@@ -17,8 +17,10 @@ font-family: "Nunito", sans-serif !important;  */
 
 body,
 html {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+  margin: 0;
+  overflow-x: none;
 }
 
 /* body {
@@ -481,7 +483,6 @@ button:active.green-a {
 
   .welcomeMsg {
     margin-top: 10vh;
-    width: 42vw;
     height: 50vh;
   }
 
