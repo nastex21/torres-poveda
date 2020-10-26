@@ -3,7 +3,7 @@ import { withRouter, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarHeader from "./Components/English/Navbar/Navbar";
-import FrontPage from "./Components/English/FrontPage";
+import FrontPage from "./Components/English/FrontPage/FrontPage";
 import Gallery from "./Components/English/Gallery";
 import SimpleReactLightbox from "simple-react-lightbox";
 

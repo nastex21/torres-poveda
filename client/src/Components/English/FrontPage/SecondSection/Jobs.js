@@ -1,40 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import ListGroup from "react-bootstrap/ListGroup";
-import houseIcon from "../../assets/Icons/house.png";
-import kitchenIcon from "../../assets/Icons/kitchen.png";
-import tubIcon from "../../assets/Icons/tub.png";
+import houseIcon from "../../../../assets/Icons/house.png";
+import kitchenIcon from "../../../../assets/Icons/kitchen.png";
+import tubIcon from "../../../../assets/Icons/tub.png";
 
-function FrontPage() {
+function Jobs() {
   return (
     <>
-      <Jumbotron>
-        <Container w-100>
-          <Row className="m-0 w-100 splashPage">
-            <div className="welcomeMsg w-100">
-              <div className="welcomeHeader">
-                <h1>Turning remodeling dreams into REALITY.</h1>
-              </div>
-              <div className="welcomeContact">
-                <p>Contact us for a FREE estimate on remodeling your home.</p>
-              </div>
-              <div className="welcomeDirection">
-                <p>Just click on the button below!</p>
-              </div>
-              <div className="welcomeBtn w-100">
-                <button className="button glass green-a">FREE ESTIMATE</button>
-              </div>
-            </div>
-          </Row>
-        </Container>
-      </Jumbotron>
       {/* For Desktop */}
-      <div w-100 className="desktopServices">
+      <div className="w-100 desktopServices">
         <Container className="d-none d-md-block p-0">
           <Row className="d-none d-md-block m-0 w-100 servicesSection">
             <div className="w-100 h-100 blackScreen">
@@ -195,4 +174,4 @@ function FrontPage() {
   );
 }
 
-export default FrontPage;
+export default Jobs;
