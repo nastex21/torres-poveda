@@ -9,18 +9,22 @@ import starImage from "../../../../assets/Icons/starIcon.png";
 
 function Testimonials() {
   return (
-    <div className="w-100">
-      <Container>
-        <Row>
-          <h1>Meet Our Customers.</h1>
+    <div className="testimonialsDiv vh-100 w-100">
+      <Container className="p-0 h-100">
+        <Row className="h-50">
+          <Col className="align-self-center">
+          <div className="testimonialHeaderDiv">
+            <p className="testimonialHeader">Meet Some of <br /> Our Customers.</p>
+          </div>
+          </Col>
         </Row>
-        <Row>
-          <Col>
-            <div className="greenBoxTestimonial">
-              <Row>
+        <Row className="flex-grow-1 align-items-end">
+          <Col className="d-flex align-items-end h-100">
+            <div className="greenBoxTestimonial  h-100">
+              <Row className="justify-content-center">
                 <img className="imageTestimonial" src={firstImage} />
               </Row>
-              <Row>
+              <Row className="justify-content-center">
                 <h3>Grettel Villarreal</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -29,7 +33,7 @@ function Testimonials() {
                   laboris nisi ut aliquip ex{" "}
                 </p>
               </Row>
-              <Row>
+              <Row className="justify-content-center">
                 <img className="starsImage" src={starImage} />
                 <img className="starsImage" src={starImage} />
                 <img className="starsImage" src={starImage} />
@@ -38,12 +42,12 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col>
+          <Col className="d-flex align-items-end">
             <div className="greenBoxTestimonial">
-              <Row>
+              <Row className="justify-content-center">
                 <img className="imageTestimonial" src={secondImage} />
               </Row>
-              <Row>
+              <Row className="justify-content-center">
                 <h3>Elizabeth Salazar</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -52,7 +56,7 @@ function Testimonials() {
                   laboris nisi ut aliquip ex{" "}
                 </p>
               </Row>
-              <Row>
+              <Row className="justify-content-center">
                 <img className="starsImage" src={starImage} />
                 <img className="starsImage" src={starImage} />
                 <img className="starsImage" src={starImage} />
@@ -61,12 +65,12 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col>
+          <Col className="d-flex align-items-end">
             <div className="greenBoxTestimonial">
-              <Row>
+              <Row className="justify-content-center">
                 <img className="imageTestimonial" src={thirdImage} />
               </Row>
-              <Row>
+              <Row className="justify-content-center">
                 <h3>Random dude</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -75,7 +79,7 @@ function Testimonials() {
                   laboris nisi ut aliquip ex{" "}
                 </p>
               </Row>
-              <Row>
+              <Row className="justify-content-center">
                 <img className="starsImage" src={starImage} />
                 <img className="starsImage" src={starImage} />
                 <img className="starsImage" src={starImage} />

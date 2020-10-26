@@ -21,7 +21,7 @@ function Jobs() {
                 <Col>
                   <div className="serviceInfoContent">
                     <div className="service-first-section">
-                      <p className="serviceHeader">Our Services.</p>
+                      <p className="sectionHeader serviceHeader">Our Services.</p>
                     </div>
                     <div className="service-second-section">
                       <p className="serviceQuestion">What can we do for you?</p>

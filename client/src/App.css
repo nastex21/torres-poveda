@@ -20,7 +20,7 @@ html {
   height: 100%;
   width: 100vw;
   margin: 0;
-  overflow-x: none;
+  overflow-x: hidden;
 }
 
 /* body {
@@ -52,7 +52,8 @@ p {
 
 /*Splash Page */
 
-.jumbotron, .desktopServices {
+.jumbotron,
+.desktopServices {
   background-attachment: fixed;
   color: white !important;
   height: 100vh;
@@ -324,7 +325,7 @@ button:active.green-a {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
-.serviceHeader {
+.sectionHeader {
   color: var(--main-green);
   line-height: 1em;
 }
@@ -346,8 +347,20 @@ button:active.green-a {
 }
 
 /* Third section,  testimonials */
+.testimonialsDiv {
+  height: 100vh;
+}
+
+.testimonialHeader {
+  text-align: right;
+  color: var(--main-green);
+  font-size: var(--section-big-headers);
+  font-weight: var(--section-weight-headers);
+}
+
 .greenBoxTestimonial {
   background-color: var(--main-green);
+  color: var(--main-white);
   width: 100%;
 }
 
@@ -514,8 +527,7 @@ button:active.green-a {
 
   /* Service Section */
   .desktopServices {
-    height: 100vh;
-    background-image: url('/background/bathroomtile.jpg');
+    background-image: url("/background/bathroomtile.jpg");
   }
 
   .serviceHeader {
@@ -602,5 +614,4 @@ button:active.green-a {
   .kitchen-third {
     padding-bottom: 1em;
   }
-
 }
