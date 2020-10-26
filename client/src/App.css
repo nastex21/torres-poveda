@@ -325,7 +325,7 @@ button:active.green-a {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
-.sectionHeader {
+.sectionHeader, .testiHeader {
   color: var(--main-green);
   line-height: 1em;
 }
@@ -347,25 +347,27 @@ button:active.green-a {
 }
 
 /* Third section,  testimonials */
-.testimonialsDiv {
-  height: 100vh;
+
+.headerRow {
+  height: 40vh;
 }
 
-.testimonialHeader {
-  text-align: right;
+.testiHeader {
   color: var(--main-green);
-  font-size: var(--section-big-headers);
-  font-weight: var(--section-weight-headers);
+}
+
+.testimonialsRows {
+  height: 60vh;
 }
 
 .greenBoxTestimonial {
   background-color: var(--main-green);
   color: var(--main-white);
-  width: 100%;
 }
 
 .imageTestimonial {
-  width: 10vw;
+  height: 20vh;
+  width: 20vw;
 }
 
 /* Mobile */
@@ -530,7 +532,7 @@ button:active.green-a {
     background-image: url("/background/bathroomtile.jpg");
   }
 
-  .serviceHeader {
+  .serviceHeader, .testiHeader {
     font-size: var(--section-big-headers);
     font-weight: var(--section-weight-headers);
   }

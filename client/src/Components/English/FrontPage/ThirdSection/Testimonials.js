@@ -9,18 +9,18 @@ import starImage from "../../../../assets/Icons/starIcon.png";
 
 function Testimonials() {
   return (
-    <div className="testimonialsDiv vh-100 w-100">
-      <Container className="p-0 h-100">
-        <Row className="h-50">
-          <Col className="align-self-center">
-          <div className="testimonialHeaderDiv">
-            <p className="testimonialHeader">Meet Some of <br /> Our Customers.</p>
-          </div>
+    <div className="testimonials vh-100">
+      <Container className="vh-100">
+        <Row className="headerRow align-items-end">
+          <Col className="justify-content-end">
+            <p className="testiHeader" style={{ textAlign: "right" }}>
+              Meet Some of <br /> Our Customers.
+            </p>
           </Col>
         </Row>
-        <Row className="flex-grow-1 align-items-end">
-          <Col className="d-flex align-items-end h-100">
-            <div className="greenBoxTestimonial  h-100">
+        <Row className="testimonialsRows">
+          <Col>
+            <div className="greenBoxTestimonial h-100">
               <Row className="justify-content-center">
                 <img className="imageTestimonial" src={firstImage} />
               </Row>
@@ -42,8 +42,8 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col className="d-flex align-items-end">
-            <div className="greenBoxTestimonial">
+          <Col>
+          <div className="greenBoxTestimonial h-100">
               <Row className="justify-content-center">
                 <img className="imageTestimonial" src={secondImage} />
               </Row>
@@ -65,8 +65,8 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col className="d-flex align-items-end">
-            <div className="greenBoxTestimonial">
+          <Col>
+          <div className="greenBoxTestimonial h-100">
               <Row className="justify-content-center">
                 <img className="imageTestimonial" src={thirdImage} />
               </Row>
