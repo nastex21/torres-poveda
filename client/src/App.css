@@ -360,6 +360,11 @@ button:active.green-a {
   height: 60vh;
 }
 
+.testimonialsRows > .col {
+  padding-right: 0;
+  padding-bottom: 1em;
+}
+
 .greenBoxTestimonial {
   background-color: var(--main-green);
   color: var(--main-white);
@@ -374,8 +379,6 @@ button:active.green-a {
   height: 20%;
   width: 100%;
   background-color: var(--main-white);
-  margin: 0;
-  padding: 0;
 }
 
 .green {
@@ -387,9 +390,20 @@ button:active.green-a {
 .onTopTesti {
   position: absolute;
   top: 0;
-  padding: 0;
-  margin: 0;
 }
+
+.onTopTesti > .row {
+  margin: 0;
+  color: var(--main-white);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.imageTestimonial {
+  border: 2px solid var(--main-grey);
+  border-radius: 10%;
+}
+
 
 /* Mobile */
 @media screen and (max-width: 767.999999px) {

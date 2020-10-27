@@ -19,10 +19,9 @@ function Testimonials() {
           </Col>
         </Row>
         <Row className="testimonialsRows">
-          <Col style={{ margin: "0", padding: "0" }}>
+          <Col>
             <div className="white"></div>
             <div className="green"></div>
-            <div></div>
             <div className="h-100 onTopTesti">
               <Row className="justify-content-center">
                 <img className="imageTestimonial" src={firstImage} />
@@ -45,7 +44,7 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col style={{ margin: "0", padding: "0" }}>
+          <Col>
             <div className="white"></div>
             <div className="green"></div>
             <div className="h-100 onTopTesti">
@@ -70,7 +69,7 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col style={{ margin: "0", padding: "0" }}>
+          <Col>
           <div className="white"></div>
             <div className="green"></div>
             <div className="h-100 onTopTesti">
