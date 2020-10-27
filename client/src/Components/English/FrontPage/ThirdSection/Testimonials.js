@@ -19,8 +19,11 @@ function Testimonials() {
           </Col>
         </Row>
         <Row className="testimonialsRows">
-          <Col>
-            <div className="greenBoxTestimonial h-100">
+          <Col style={{ margin: "0", padding: "0" }}>
+            <div className="white"></div>
+            <div className="green"></div>
+            <div></div>
+            <div className="h-100 onTopTesti">
               <Row className="justify-content-center">
                 <img className="imageTestimonial" src={firstImage} />
               </Row>
@@ -42,8 +45,10 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col>
-          <div className="greenBoxTestimonial h-100">
+          <Col style={{ margin: "0", padding: "0" }}>
+            <div className="white"></div>
+            <div className="green"></div>
+            <div className="h-100 onTopTesti">
               <Row className="justify-content-center">
                 <img className="imageTestimonial" src={secondImage} />
               </Row>
@@ -65,8 +70,10 @@ function Testimonials() {
               </Row>
             </div>
           </Col>
-          <Col>
-          <div className="greenBoxTestimonial h-100">
+          <Col style={{ margin: "0", padding: "0" }}>
+          <div className="white"></div>
+            <div className="green"></div>
+            <div className="h-100 onTopTesti">
               <Row className="justify-content-center">
                 <img className="imageTestimonial" src={thirdImage} />
               </Row>

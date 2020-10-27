@@ -370,6 +370,27 @@ button:active.green-a {
   width: 20vw;
 }
 
+.white {
+  height: 20%;
+  width: 100%;
+  background-color: var(--main-white);
+  margin: 0;
+  padding: 0;
+}
+
+.green {
+  height: 80%;
+  width: 100%;
+  background-color: var(--main-green);
+}
+
+.onTopTesti {
+  position: absolute;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+
 /* Mobile */
 @media screen and (max-width: 767.999999px) {
   .splashPage {
