@@ -519,6 +519,7 @@ button:active.green-a {
     height: 100vh;
     /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
+    margin-bottom: 0 !important;
 
     /* Background image doesn't tile */
     background-repeat: no-repeat;
