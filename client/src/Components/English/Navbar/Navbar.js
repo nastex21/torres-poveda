@@ -26,13 +26,13 @@ function NavbarHeader({ location, changeLang }) {
         style={{ backgroundColor: "black" }}
       >
         <Container>
-          <Navbar.Brand href="#home">
+     {/*      <Navbar.Brand href="#home">
             <img
               alt=""
               src={logo}
               className="d-inline-block align-top brandImage img-responsive"
             />
-          </Navbar.Brand>
+          </Navbar.Brand> */}
           <Navbar.Text
             className="active"
             onClick={selectEnglish}
