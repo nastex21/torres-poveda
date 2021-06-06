@@ -34,7 +34,7 @@ function NavbarHeader({ location, changeLang }) {
             />
           </Navbar.Brand> */}
           <Navbar.Text
-            className="active"
+            className="active activeLang"
             onClick={selectEnglish}
             style={{ cursor: "pointer" }}
           >
@@ -56,19 +56,19 @@ function NavbarHeader({ location, changeLang }) {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link
-              className={location.pathname == "/" ? "active" : null}
+              className={location.pathname == "/" ? "active activeLocation" : null}
               href="/"
             >
               Home
             </Nav.Link>
             <Nav.Link
-              className={location.pathname == "/gallery" ? "active" : null}
+              className={location.pathname == "/gallery" ? "active activeLocation" : null}
               href="/gallery"
             >
               Gallery
             </Nav.Link>
             <Nav.Link
-              className={location.pathname == "/contact" ? "active" : null}
+              className={location.pathname == "/contact" ? "active activeLocation" : null}
               href="/contact"
             >
               Contact

@@ -47,8 +47,14 @@ p {
 }
 
 .active {
-  color: var(--main-green) !important;
+  color: var(--main-white) !important;
+  background: var(--main-green);
+  border-radius: 5%;
 }
+
+/* .activeLocation {
+  width: 100%;
+} */
 
 /*Splash Page */
 
@@ -500,6 +506,8 @@ button:active.green-a {
   .navbar {
     width: 100%;
     padding: 0 !important;
+    font-size: .8em;
+    font-weight: 700;
   }
 
   .navbar-text {
