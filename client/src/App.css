@@ -521,7 +521,7 @@ button:active.green-a {
 
   /* Jumbotron test */
   .jumbotron {
-    background: url("/background/splash.jpg");
+    background: url("background/splash.jpg");
     background-attachment: fixed;
     color: white !important;
     height: 100vh;
@@ -573,7 +573,7 @@ button:active.green-a {
 
   /* Service Section */
   .desktopServices {
-    background-image: url("/background/bathroomtile.jpg");
+    background-image: url("background/bathroomtile.jpg");
   }
 
   .serviceHeader, .testiHeader {
