@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   console.log(req.query.ID);
 
   // Iterate recursively through a folder
-  readdirp('./client/public/gallery_photos/Group_' + req.query.ID, { type: 'files', fileFilter: ['*.jpg', '*.jpeg', '*.png', '*.JPEG'] })
+  readdirp('./client/public/gallery_photos/Group_' + req.query.ID, { type: 'files', fileFilter: ['*.jpg', '*.jpeg', '*.png', '*.JPEG', '*.JPG'] })
     .on('data', (entry) => {
       var { path } = entry;
 
