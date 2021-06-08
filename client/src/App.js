@@ -5,7 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarHeader from "./Components/English/Navbar/Navbar";
 import FrontPage from "./Components/English/FrontPage/FrontPage";
 import Gallery from "./Components/English/Gallery";
+import Pictures from './Components/English/Pictures';
 import SimpleReactLightbox from "simple-react-lightbox";
+import { list } from './Components/util/galleriesList';
 
 function App(props) {
   const [langSelection, setLang] = useState(0);
@@ -17,7 +19,7 @@ function App(props) {
   };
 
   const englishSelection = () => {
-    console.log(locationHistory);
+    console.log(list);
     return (
       <>
         <>
