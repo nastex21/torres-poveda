@@ -1,118 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import useInfiniteScroll from "../util/useInfiniteScroll";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
-import Modal from "react-bootstrap/Modal";
-import ModalBody from "react-bootstrap/ModalBody";
-import Carousel from "react-bootstrap/Carousel";
-import CarouselItem from "react-bootstrap/CarouselItem";
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import { list } from '../util/galleriesList';
 
 function Gallery() {
-  const [imageArray, setArray] = useState([]); //original fetched, huge array
-  const [images, setImages] = useState([]); //new spliced images array
-  const [isFetching, setIsFetching] = useInfiniteScroll(addMoreImages);
-  //Modal stuff
-  const [show, setShow] = useState(false);
-  //Carousel stuff
-  const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    console.log(e);
-    console.log(selectedIndex);
-    setIndex(selectedIndex);
-  };
-
-  //get original set of photos
-  const getPhotos = () => {
-    var imageApi = "/api/get-images";
-
-    axios.get(imageApi).then((response, err) => {
-      if (response) {
-        setArray([...imageArray, ...response.data]);
-      }
-    });
-  };
-
-  function addMoreImages() {
-    setTimeout(() => {
-      setImages(
-        images.concat(imageArray.slice(images.length, images.length + 12))
-      );
-      setIsFetching(false);
-    }, 2000);
-  }
-
-  useEffect(() => {
-    getPhotos();
-  }, []);
-
-  useEffect(() => {
-    if (images.length == 0) {
-      var newImages = images.concat(
-        imageArray.slice(images.length, images.length + 12)
-      );
-      console.log(newImages);
-      setImages([...images, ...newImages]);
-    }
-  }, [imageArray]);
-
-  const clickModal = function (num) {
-    setIndex(num);
-    setShow(true);
-  };
-
-  console.log(index);
-  const imageScroll = () => {
+  return Object.keys(list).map((item, index) => {
     return (
-      <Container>
-        <Row xs={2} md={4} data-toggle="modal" data-target="#imageModal">
-          {images.map((item, num) => (
-            <Image
-              src={item.src}
-              key={num}
-              className="w-100"
-              data-target="#carousel"
-              data-slide-to={num}
-              thumbnail
-              onClick={() => clickModal(num)}
-            />
-          ))}
-        </Row>
-        <Modal
-          id="imageModal"
-          tabIndex="-1"
-          role="dialog"
-          aria-hidden="true"
-          show={show}
-          onHide={() => setShow(false)}
-        >
-          <ModalBody>
-            <Carousel activeIndex={index} onSelect={handleSelect}>
-              {images.map((item, num) => (
-                <CarouselItem>
-                  <Image
-                    src={item.src}
-                    key={num}
-                    className="w-100"
-                    data-target="#carousel"
-                    data-slide-to={num}
-                  />
-                </CarouselItem>
-              ))}
-            </Carousel>
-          </ModalBody>
-        </Modal>
-
-        {images.length !== imageArray.length && isFetching
-          ? "Fetching more images.."
-          : null}
-      </Container>
-    );
-  };
-
-  return <>{imageArray.length > 0 ? imageScroll() : null}</>;
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={process.env.PUBLIC_URL + list[item]} />
+      </Card>
+    )
+  })
 }
 
 export default Gallery;
