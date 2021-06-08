@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'react-bootstrap/Image';
+import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,7 +13,12 @@ function Gallery() {
           if (keyName == 'url') {
             return (
               <Col xs={6} md={4}>
-                <Image src={process.env.PUBLIC_URL + item[keyName]} thumbnail />
+                <Card className="bg-dark text-white">
+                  <Card.Img src={process.env.PUBLIC_URL + item[keyName]}  alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title>{key + 1}</Card.Title>
+                  </Card.ImgOverlay>
+                </Card>
               </Col>
             )
           }
