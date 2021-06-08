@@ -7,14 +7,16 @@ router.get('/', (req, res) => {
   // In this example, this variable will store all the paths of the files and directories inside the providen path
   var allFilePaths = [];
 
+  console.log(req.query.ID);
+
   // Iterate recursively through a folder
-  readdirp('./client/public/gallery_photos', { type: 'files', fileFilter: ['*.jpg', '*jpeg', '*.png'], depth: 1 })
+  readdirp('./client/public/gallery_photos/Group_' + req.query.ID, { type: 'files', fileFilter: ['*.jpg', '*.jpeg', '*.png', '*.JPEG'] })
     .on('data', (entry) => {
       var { path } = entry;
 
       var dataObj = {};
       path = path.replace(/\\/g, "/");
-      dataObj.src = '/gallery_photos/' + path;
+      dataObj.src = '/gallery_photos/Group_' + req.query.ID + '/' + path;
       allFilePaths.push(dataObj);  
     })
     // Optionally call stream.destroy() in `warn()` in order to abort and cause 'close' to be emitted
