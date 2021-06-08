@@ -5,9 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarHeader from "./Components/English/Navbar/Navbar";
 import FrontPage from "./Components/English/FrontPage/FrontPage";
 import Gallery from "./Components/English/Gallery";
-import Pictures from './Components/English/Pictures';
+import { Link } from "react-router-dom";
 import SimpleReactLightbox from "simple-react-lightbox";
 import { list } from './Components/util/galleriesList';
+import Pictures from './Components/English/Pictures';
 
 function App(props) {
   const [langSelection, setLang] = useState(0);
@@ -25,8 +26,12 @@ function App(props) {
         <>
           <NavbarHeader changeLang={changeLang} location={props.location} />
           <Switch>
+            {list.map((item, key) => Object.keys(item).map(function (keyName, keyIndex) {
+              <Link to={`/gallery/${item.id}`} />
+            }))}
             <Route exact path="/" component={FrontPage} />
             <Route exact path="/gallery" component={Gallery} />
+            <Route path="/gallery/:id" component={Pictures} />
           </Switch>
         </>
       </>

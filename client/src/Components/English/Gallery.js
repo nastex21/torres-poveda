@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { list } from '../util/galleriesList';
+import { Link } from "react-router-dom";
 
 function Gallery() {
   return (
@@ -13,12 +14,14 @@ function Gallery() {
           if (keyName == 'url') {
             return (
               <Col xs={6} md={4}>
-                <Card className="bg-dark text-white">
-                  <Card.Img src={process.env.PUBLIC_URL + item[keyName]}  alt="Card image" />
-                  <Card.ImgOverlay>
-                    <Card.Title>{key + 1}</Card.Title>
-                  </Card.ImgOverlay>
-                </Card>
+                <Link to={`/gallery/${item.id}`}>
+                  <Card className="bg-dark text-white">
+                    <Card.Img src={process.env.PUBLIC_URL + item[keyName]} alt="Card image" />
+                    <Card.ImgOverlay>
+                      <Card.Title>{key + 1}</Card.Title>
+                    </Card.ImgOverlay>
+                  </Card>
+                </Link>
               </Col>
             )
           }
