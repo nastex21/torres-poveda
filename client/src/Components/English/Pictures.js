@@ -10,7 +10,6 @@ import axios from "axios";
 
 function Pictures(props) {
     const [imageArray, setArray] = useState([]); //original fetched, huge array
-    const [images, setImages] = useState([]); //new spliced images array
     //Modal stuff
     const [show, setShow] = useState(false);
     //Carousel stuff
@@ -25,7 +24,6 @@ function Pictures(props) {
             }
           }).then((response, err) => {
             if (response) {
-                console.log(response);
                 setArray([...imageArray, ...response.data]);
             }
         });
@@ -37,13 +35,8 @@ function Pictures(props) {
     };
 
     const handleSelect = (selectedIndex, e) => {
-        console.log(e);
-        console.log(selectedIndex);
         setIndex(selectedIndex);
       };
-
-    console.log(props);
-    console.log(imageArray);
 
     return (
         <div>
@@ -71,7 +64,7 @@ function Pictures(props) {
                 >
                     <ModalBody>
                         <Carousel activeIndex={index} onSelect={handleSelect}>
-                            {images.map((item, num) => (
+                            {imageArray.map((item, num) => (
                                 <CarouselItem>
                                     <Image
                                         src={item.src}
