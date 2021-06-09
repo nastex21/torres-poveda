@@ -41,7 +41,7 @@ function Pictures(props) {
     return (
         <div>
             <Container>
-                <Row xs={2} md={4} data-toggle="modal" data-target="#imageModal">
+                <Row xs={3} md={6} data-toggle="modal" data-target="#imageModal">
                     {imageArray.map((item, num) => (
                         <Image
                             src={item.src}

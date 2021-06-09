@@ -1,9 +1,9 @@
 export const list = [
     { id: '001', url: "gallery_photos/Group_001/IMG_20181102_131534687.jpg" },
     { id: '002', url: "gallery_photos/Group_002/IMG_3746.jpeg" },
-    { id: '003', url:"gallery_photos/Group_003/IMG_3531.jpg" },
+    { id: '003', url:"gallery_photos/Group_003/IMG_3528.jpg" },
     { id: '004', url:'gallery_photos/Group_004/IMG_2425.jpg' },
-    { id: '005', url:'gallery_photos/Group_005/IMG_4066.JPEg' },
+    { id: '005', url:'gallery_photos/Group_005/IMG_4073.JPEG' },
     { id: '006', url:'gallery_photos/Group_006/IMG_20190124_082804967.jpg' },
     { id: '007', url:'gallery_photos/Group_007/IMG_20190422_175329280.jpg' },
     { id: '008', url:'gallery_photos/Group_008/IMG_0629.jpg' },
@@ -13,12 +13,15 @@ export const list = [
     { id: '012', url:'gallery_photos/Group_012/IMG_0073.jpg' },
     { id: '013', url:'gallery_photos/Group_013/IMG_20190411_135721144.jpg' },
     { id: '014', url:'gallery_photos/Group_014/IMG_20190306_094601418.jpg' },
-    { id: '015', url:'gallery_photos/Group_015/IMG_20190308_112731718.jpg' },
+    { id: '015', url:'gallery_photos/Group_015/IMG_1039.jpg' },
     { id: '016', url:'gallery_photos/Group_016/IMG_20190528_125754093.jpg' },
     { id: '017', url:'gallery_photos/Group_017/IMG_0327.JPg' },
     { id: '018', url:'gallery_photos/Group_018/IMG_1162.jpg' },
     { id: '019', url:'gallery_photos/Group_019/IMG_0863.jpg' },
-    { id: '020', url:'gallery_photos/Group_020/IMG_20180927_170240820.jpg' },
+    { id: '020', url:'gallery_photos/Group_020/IMG_20180927_170216304.jpg' },
     { id: '021', url:'gallery_photos/Group_021/IMG_0965.jpg' },
-    { id: '022', url:'gallery_photos/Group_022/IMG_20190308_131640700.jpg' }
+    { id: '022', url:'gallery_photos/Group_022/IMG_20190308_131640700.jpg' },
+    { id: '023', url:'gallery_photos/Group_023/IMG_4700.JPEG'},
+    { id: '024', url:'gallery_photos/Group_024/IMG_4590.JPEG'},
+    { id: '025', url:'gallery_photos/Group_025/IMG_4547.JPEG'}
 ];
