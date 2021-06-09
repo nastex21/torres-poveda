@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import SimpleReactLightbox from "simple-react-lightbox";
 import { list } from './Components/util/galleriesList';
 import Pictures from './Components/English/Pictures';
+import Contact from './Components/English/Contact';
 
 function App(props) {
   const [langSelection, setLang] = useState(0);
@@ -32,6 +33,7 @@ function App(props) {
             <Route exact path="/" component={FrontPage} />
             <Route exact path="/gallery" component={Gallery} />
             <Route path="/gallery/:id" component={Pictures} />
+            <Route exact path="/contact" component={Contact} />
           </Switch>
         </>
       </>
